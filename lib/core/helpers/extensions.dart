@@ -14,6 +14,9 @@ extension Navigation on BuildContext {
         .pushReplacementNamed(routeName, arguments: arguments);
   }
 
+  //بيروح على شاشة جديدة، وبـــ يحذف كل الشاشات اللي قبلها لحد ما يوصل لحالة توقفها بتتحكم فيها باستخدام predicate.
+  //context.pushNamedAndRemoveUntil('/home', predicate: (route) => false);
+  //ده معناه هيروح على /home ويمسح كل الشاشات القديمة.
   Future<dynamic> pushNamedAndRemoveUntil(String routeName,
       {Object? arguments, required RoutePredicate predicate}) {
     return Navigator.of(this).pushNamedAndRemoveUntil(
@@ -23,6 +26,7 @@ extension Navigation on BuildContext {
     );
   }
 
+  //بيرجع للشاشة السابقة (زي زر الرجوع).
   void pop() => Navigator.of(this).pop();
 
 /*

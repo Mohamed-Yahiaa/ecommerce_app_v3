@@ -50,21 +50,19 @@ class OnboardingScreen extends StatelessWidget {
               return Column(
                 children: <Widget>[
                   PageIndicatorAndSkip(
-                    currentPage: currentPage,
-                    totalPages: pages.length,
-                    onSkipPressed: () => _navigateToLogin(context),
-                  ), //===============================
+                      currentPage: currentPage,
+                      totalPages: pages.length,
+                      onSkipPressed: () => _navigateToLogin(
+                          context)), //===============================
                   Expanded(
-                    child: PageView.builder(
-                      controller: _pageController,
-                      itemCount: pages.length,
-                      onPageChanged: (index) =>
-                          context.read<OnboardingCubit>().goToPage(index),
-                      itemBuilder: (context, index) {
-                        return OnboardingPage(model: pages[index]);
-                      },
-                    ),
-                  ),
+                      child: PageView.builder(
+                          controller: _pageController,
+                          itemCount: pages.length,
+                          onPageChanged: (index) =>
+                              context.read<OnboardingCubit>().goToPage(index),
+                          itemBuilder: (context, index) {
+                            return OnboardingPage(model: pages[index]);
+                          })),
                   const SizedBox(height: 20),
 
                   _buildNavigationButton(context, currentPage),
@@ -115,7 +113,7 @@ class OnboardingScreen extends StatelessWidget {
   }
 
   void _navigateToLogin(BuildContext context) {
-    Navigator.pushReplacementNamed(context, Routes.login);
+    //Navigator.pushReplacementNamed(context, Routes.login);
     context.pushReplacementNamed(Routes.login);
   }
 }
