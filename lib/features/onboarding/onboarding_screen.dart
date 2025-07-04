@@ -3,7 +3,8 @@ import 'package:ecommerce_app/core/routing/routes.dart';
 import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:ecommerce_app/features/onboarding/data/onboarding_data.dart';
 import 'package:ecommerce_app/features/onboarding/data/onboarding_model.dart';
-import 'package:ecommerce_app/features/onboarding/data/onboarding_page.dart';
+import 'package:ecommerce_app/features/onboarding/data/onboarding_pages.dart';
+import 'package:ecommerce_app/features/onboarding/presentation/widget/next_button.dart';
 import 'package:ecommerce_app/features/onboarding/presentation/widget/page_indicator_and_skip.dart';
 import 'package:ecommerce_app/features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:ecommerce_app/features/onboarding/presentation/widget/next.dart';
@@ -52,8 +53,7 @@ class OnboardingScreen extends StatelessWidget {
                   PageIndicatorAndSkip(
                       currentPage: currentPage,
                       totalPages: pages.length,
-                      onSkipPressed: () => _navigateToLogin(
-                          context)), //===============================
+                      onSkipPressed: () => _navigateToLogin(context)),
                   Expanded(
                       child: PageView.builder(
                           controller: _pageController,
@@ -63,8 +63,6 @@ class OnboardingScreen extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return OnboardingPage(model: pages[index]);
                           })),
-                  const SizedBox(height: 20),
-
                   _buildNavigationButton(context, currentPage),
                 ],
               );
@@ -78,38 +76,29 @@ class OnboardingScreen extends StatelessWidget {
   Widget _buildNavigationButton(BuildContext context, int currentPage) {
     final cubit = context.read<OnboardingCubit>();
 
-    return currentPage == onboardingPages.length - 1
-        ? Container(
-            height: 100.0,
-            width: double.infinity,
-            color: Colors.white,
-            child: GestureDetector(
-                //GestureDetector in Flutter is a (Widget) بيستخدم لاكتشاف الإيماءات  ex:onTap, onLongPress ..etc
-                onTap: () => _navigateToLogin(context),
-                child: Center(
-                    child: Padding(
-                        padding: EdgeInsets.only(bottom: 30.0),
-                        child: Text('Get started',
-                            style: TextStyles.font20LightRedSemiBold)))))
-        : Stack(alignment: Alignment.center, children: [
-            Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children:
-                    _buildPageIndicator(currentPage, onboardingPages.length)),
-            SizedBox(width: 10.0),
-            currentPage != onboardingPages.length - 1
-                ? Expanded(
-                    child: Align(
-                        alignment: FractionalOffset.bottomRight,
-                        child: TextButton(
-                            onPressed: () {
-                              _pageController.nextPage(
-                                  duration: Duration(milliseconds: 500),
-                                  curve: Curves.ease);
-                            },
-                            child: next())))
-                : Text(''),
-          ]);
+    bool isLastPage = currentPage == onboardingPages.length - 1;
+
+    return Stack(alignment: Alignment.center, children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: _buildPageIndicator(currentPage, onboardingPages.length),
+      ),
+      SizedBox(width: 10.0),
+      Expanded(
+        child: Align(
+          alignment: FractionalOffset.bottomRight,
+          child: NextButton(
+              onPressed: () {
+                isLastPage
+                    ? _navigateToLogin(context)
+                    : _pageController.nextPage(
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.ease); //cubit.nextPage();
+              },
+              isLastPage: isLastPage),
+        ),
+      )
+    ]);
   }
 
   void _navigateToLogin(BuildContext context) {

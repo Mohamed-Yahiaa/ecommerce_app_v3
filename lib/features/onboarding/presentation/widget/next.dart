@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce_app/core/theming/styles.dart';
 
 class next extends StatelessWidget {
-  const next({super.key});
+  //const next({super.key});
+  final String caption;
+
+  const next({super.key, required this.caption});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        Text('Next',
+        Text(caption,
             style: TextStyles.font18Black600Weight
                 .copyWith(color: Color(0xFFF83758))),
         SizedBox(width: 10.0),
