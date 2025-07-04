@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/helpers/extensions.dart';
 import 'package:ecommerce_app/core/routing/routes.dart';
 import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:ecommerce_app/features/onboarding/data/onboarding_data.dart';
@@ -115,5 +116,6 @@ class OnboardingScreen extends StatelessWidget {
 
   void _navigateToLogin(BuildContext context) {
     Navigator.pushReplacementNamed(context, Routes.login);
+    context.pushReplacementNamed(Routes.login);
   }
 }
