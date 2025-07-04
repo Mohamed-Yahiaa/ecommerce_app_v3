@@ -63,7 +63,7 @@ class OnboardingScreen extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return OnboardingPage(model: pages[index]);
                           })),
-                  _buildNavigationButton(context, currentPage),
+                  _buildDotsNextButton(context, currentPage),
                 ],
               );
             },
@@ -73,7 +73,7 @@ class OnboardingScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildNavigationButton(BuildContext context, int currentPage) {
+  Widget _buildDotsNextButton(BuildContext context, int currentPage) {
     final cubit = context.read<OnboardingCubit>();
 
     bool isLastPage = currentPage == onboardingPages.length - 1;

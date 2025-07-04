@@ -1,6 +1,6 @@
 //باحط فيه كل ال جينيريت راوت اللى انا عايزها
-import 'package:ecommerce_app/features/login/ui/login_screen.dart';
-import 'package:ecommerce_app/features/onboarding/onboarding_screen.dart';
+import 'package:ecommerce_app/features/auth/presentation/screens/login_screen.dart';
+import 'package:ecommerce_app/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/core/routing/routes.dart';
 

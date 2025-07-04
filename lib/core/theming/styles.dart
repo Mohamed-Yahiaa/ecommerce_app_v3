@@ -39,6 +39,12 @@ class TextStyles {
     fontFamily: extraBold,
     fontWeight: FontWeight.bold,
   );
+  static TextStyle font36BlackBold = TextStyle(
+    fontSize: 36.sp,
+    color: Colors.black,
+    fontFamily: bold,
+    fontWeight: FontWeight.bold,
+  );
 }
 //تسميات افضل
 /*class TextStyles {
