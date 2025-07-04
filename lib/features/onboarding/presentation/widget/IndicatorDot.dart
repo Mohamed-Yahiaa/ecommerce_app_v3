@@ -1,13 +1,13 @@
 // onboarding_indicator.dart
 import 'package:flutter/material.dart';
 
-class OnboardingIndicator extends StatelessWidget {
+class IndicatorDot extends StatelessWidget {
   final int currentPage;
   final int pageCount;
   final Color activeColor;
   final Color inactiveColor;
 
-  const OnboardingIndicator({
+  const IndicatorDot({
     super.key,
     required this.currentPage,
     required this.pageCount,

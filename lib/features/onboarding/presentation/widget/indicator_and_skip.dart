@@ -2,12 +2,12 @@
 import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
-class PageIndicatorAndSkip extends StatelessWidget {
+class IndicatorAndSkip extends StatelessWidget {
   final int currentPage;
   final int totalPages;
   final VoidCallback onSkipPressed;
 
-  const PageIndicatorAndSkip({
+  const IndicatorAndSkip({
     super.key,
     required this.currentPage,
     required this.totalPages,
@@ -21,9 +21,14 @@ class PageIndicatorAndSkip extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            '${currentPage + 1}/$totalPages',
-            style: TextStyles.font18Black600Weight,
+          Row(
+            children: [
+              Text('${currentPage + 1}',
+                  style: TextStyles.font18Black600Weight),
+              Text('/$totalPages',
+                  style: TextStyles.font18Black600Weight
+                      .copyWith(color: Colors.grey)),
+            ],
           ),
           TextButton(
             onPressed: onSkipPressed,

@@ -5,7 +5,7 @@ import 'package:ecommerce_app/features/onboarding/data/onboarding_data.dart';
 import 'package:ecommerce_app/features/onboarding/data/onboarding_model.dart';
 import 'package:ecommerce_app/features/onboarding/data/onboarding_pages.dart';
 import 'package:ecommerce_app/features/onboarding/presentation/widget/next_button.dart';
-import 'package:ecommerce_app/features/onboarding/presentation/widget/page_indicator_and_skip.dart';
+import 'package:ecommerce_app/features/onboarding/presentation/widget/indicator_and_skip.dart';
 import 'package:ecommerce_app/features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:ecommerce_app/features/onboarding/presentation/widget/next.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +27,7 @@ class OnboardingScreen extends StatelessWidget {
   Widget _indicator(bool isActive) {
     return AnimatedContainer(
       duration: Duration(milliseconds: 150),
-      margin: EdgeInsets.symmetric(horizontal: 5),
+      margin: EdgeInsets.symmetric(horizontal: 4),
       height: 10.0,
       width: isActive ? 40.0 : 12,
       decoration: BoxDecoration(
@@ -50,7 +50,7 @@ class OnboardingScreen extends StatelessWidget {
             builder: (context, currentPage) {
               return Column(
                 children: <Widget>[
-                  PageIndicatorAndSkip(
+                  IndicatorAndSkip(
                       currentPage: currentPage,
                       totalPages: pages.length,
                       onSkipPressed: () => _navigateToLogin(context)),
@@ -90,7 +90,7 @@ class OnboardingScreen extends StatelessWidget {
           child: NextButton(
               onPressed: () {
                 isLastPage
-                    ? _navigateToLogin(context)
+                    ? context.pushReplacementNamed(Routes.login)
                     : _pageController.nextPage(
                         duration: Duration(milliseconds: 500),
                         curve: Curves.ease); //cubit.nextPage();
