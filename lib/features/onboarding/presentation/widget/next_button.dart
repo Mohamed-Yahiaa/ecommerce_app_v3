@@ -20,19 +20,11 @@ class NextButton extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            isLastPage ? 'Get Started' : 'Next',
-            style: TextStyles.font18Black600Weight.copyWith(
-              color: ColorsManager.primary,
-            ),
-          ),
+          Text(isLastPage ? 'Get Started' : 'Next',
+              style: TextStyles.font18Black600Weight),
           if (!isLastPage) ...[
             SizedBox(width: 8.0),
-            Icon(
-              Icons.arrow_forward,
-              color: ColorsManager.primary,
-              size: 20.0,
-            ),
+            Icon(Icons.arrow_forward, color: ColorsManager.primary, size: 20.0),
           ],
         ],
       ),
