@@ -18,11 +18,11 @@ class ButtonRose extends StatelessWidget {
           backgroundColor: ClrMngr.rose, // 👈 هنا لون الخلفية
           padding: const EdgeInsets.symmetric(vertical: 16),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(4),
           ),
         ),
         child: const Text(
-          'تسجيل الدخول',
+          'Login',
           style: TextStyle(
             color: Colors.white, // 👈 لون النص
             fontSize: 16, // اختياري: حجم الخط

@@ -14,9 +14,9 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.8
+  #font_awesome_flutter: ^10.7.0
   flutter_lints: ^5.0.0
   flutter_bloc: ^9.0.0
-  flutter_native_splash: ^2.4.4
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
 
@@ -42,6 +42,10 @@ flutter:
       fonts:
         - asset: assets/fonts/MontserratSemibold.ttf
           weight: 600
+    - family: MontserratMedium
+      fonts:
+        - asset: assets/fonts/MontserratMedium.ttf
+          weight: 500
     - family: MontserratBold
       fonts:
         - asset: assets/fonts/MontserratBold.ttf
@@ -60,10 +64,4 @@ flutter:
     - assets/imagez/
     - assets/images/
     - assets/images/onboarding/
-#flutter pub run flutter_native_splash:create
-flutter_native_splash:
-  color: "#ffffff"
-  image: assets//images/splash_logo.png
-  android: true
-  ios: true
-  web: false
+    - assets/images/social/

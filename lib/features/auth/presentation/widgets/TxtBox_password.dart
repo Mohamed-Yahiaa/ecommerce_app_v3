@@ -22,13 +22,15 @@ class _TxtBoxPasswordState extends State<TxtBoxPassword> {
   Widget build(BuildContext context) {
     return TxtBox(
       controller: widget.controller,
-      hintText: 'أدخل كلمة المرور',
+      labelText: 'Password',
+      hintText: 'Password',
       obscureText: _obscureText,
       prefixIcon: const Icon(Icons.lock),
       suffixIcon: IconButton(
         icon: Icon(
           _obscureText ? Icons.visibility : Icons.visibility_off,
         ),
+        //onPressed: () => onPressed,
         onPressed: () {
           setState(() {
             _obscureText = !_obscureText;
@@ -48,3 +50,47 @@ class _TxtBoxPasswordState extends State<TxtBoxPassword> {
     );
   }
 }
+
+//الاستخدام
+
+/*
+class MyForm extends StatefulWidget {
+  @override
+  _MyFormState createState() => _MyFormState();
+}
+
+class _MyFormState extends State<MyForm> {
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        children: [
+          TxtBox_name(controller: _nameController),
+          SizedBox(height: 16),
+          TxtBox_password(controller: _passwordController),
+          SizedBox(height: 24),
+          ElevatedButton(
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                // عملية التسجيل
+              }
+            },
+            child: Text('تسجيل'),
+          ),
+        ],
+      ),
+    );
+  }
+}*/

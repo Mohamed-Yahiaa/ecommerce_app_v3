@@ -6,9 +6,17 @@ class TextStyles {
   //فيه طريقتين بنستخدمهم فى التسمية depends على فيجما فايل اللى جايلى
 
   static const String primaryFont = 'MontserratRegular'; //400
+  static const String medium = 'MontserratMedium'; //500
   static const String semiBold = 'MontserratSemibold'; //600
   static const String bold = 'MontserratBold'; //700
   static const String extraBold = 'MontserratExtrabold'; //800
+
+  static TextStyle font12GrayMedium = TextStyle(
+    fontSize: 12.sp,
+    color: ClrMngr.gray2,
+    fontFamily: medium,
+    fontWeight: FontWeight.w500,
+  );
 
   static TextStyle font14GraySemibold = TextStyle(
     fontSize: 14.sp,
