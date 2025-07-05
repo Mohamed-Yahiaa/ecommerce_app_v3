@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-class ColorsManager {
+class ClrMngr {
   static const Color mainBlue = Color(0xFF247CFF);
   static const Color gray = Color(0xFF757575);
+  static const Color rose = Color(0xFFF83758);
 //استخدام تسمية توضح الغرض من اللون وليس قيمته فقط
   static const Color primary = Color(0xFF0066FF);
   static const Color background = Color(0xFFFFFFFF);

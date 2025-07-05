@@ -24,7 +24,7 @@ class NextButton extends StatelessWidget {
           isLastPage ? next(caption: 'Get Started') : next(caption: 'Next'),
           if (!isLastPage) ...[
             SizedBox(width: 8.0),
-            Icon(Icons.arrow_forward, color: ColorsManager.primary, size: 20.0),
+            Icon(Icons.arrow_forward, color: ClrMngr.primary, size: 20.0),
           ],
         ],
       ),

@@ -5,14 +5,14 @@ import 'package:ecommerce_app/core/theming/colors.dart';
 class TextStyles {
   //فيه طريقتين بنستخدمهم فى التسمية depends على فيجما فايل اللى جايلى
 
-  static const String primaryFont = 'MontserratRegular';
-  static const String semiBold = 'MontserratSemibold';
-  static const String bold = 'MontserratBold';
-  static const String extraBold = 'MontserratExtrabold';
+  static const String primaryFont = 'MontserratRegular'; //400
+  static const String semiBold = 'MontserratSemibold'; //600
+  static const String bold = 'MontserratBold'; //700
+  static const String extraBold = 'MontserratExtrabold'; //800
 
   static TextStyle font14GraySemibold = TextStyle(
     fontSize: 14.sp,
-    color: ColorsManager.gray,
+    color: ClrMngr.gray,
     fontFamily: semiBold,
     fontWeight: FontWeight.w600,
   );
