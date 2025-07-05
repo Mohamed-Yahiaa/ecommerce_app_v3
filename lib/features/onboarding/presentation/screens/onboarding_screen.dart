@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/core/helpers/extensions.dart';
 import 'package:ecommerce_app/core/routing/routes.dart';
 import 'package:ecommerce_app/core/theming/styles.dart';
+import 'package:ecommerce_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:ecommerce_app/features/onboarding/data/onboarding_data.dart';
 import 'package:ecommerce_app/features/onboarding/data/onboarding_model.dart';
 import 'package:ecommerce_app/features/onboarding/data/onboarding_pages.dart';
@@ -40,10 +41,11 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<OnboardingModel> pages = onboardingPages;
+    final pageCount = pages.length;
 
     return Scaffold(
       body: BlocProvider(
-        create: (context) => OnboardingCubit(totalPages: pages.length),
+        create: (context) => OnboardingCubit(totalPages: pageCount),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 40.0),
           child: BlocBuilder<OnboardingCubit, int>(
@@ -52,7 +54,7 @@ class OnboardingScreen extends StatelessWidget {
                 children: <Widget>[
                   IndicatorAndSkip(
                       currentPage: currentPage,
-                      totalPages: pages.length,
+                      totalPages: pageCount,
                       onSkipPressed: () => _navigateToLogin(context)),
                   Expanded(
                       child: PageView.builder(
@@ -90,7 +92,7 @@ class OnboardingScreen extends StatelessWidget {
           child: NextButton(
               onPressed: () {
                 isLastPage
-                    ? context.pushReplacementNamed(Routes.login)
+                    ? _navigateToLogin(context)
                     : _pageController.nextPage(
                         duration: Duration(milliseconds: 500),
                         curve: Curves.ease); //cubit.nextPage();
@@ -103,6 +105,11 @@ class OnboardingScreen extends StatelessWidget {
 
   void _navigateToLogin(BuildContext context) {
     //Navigator.pushReplacementNamed(context, Routes.login);
-    context.pushReplacementNamed(Routes.login);
+
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => LoginScreen()),
+    );
+    //context.pushReplacementNamed(Routes.login);
   }
 }

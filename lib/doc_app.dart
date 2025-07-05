@@ -26,11 +26,7 @@ class DocApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         //initialRoute: Routes.onBoarding,
         //onGenerateRoute: appRouter.generateRoute,
-        home: BlocProvider(
-          create: (context) =>
-              OnboardingCubit(totalPages: onboardingPages.length),
-          child: OnboardingScreen(),
-        ),
+        home: OnboardingScreen(),
       ),
     );
   }
