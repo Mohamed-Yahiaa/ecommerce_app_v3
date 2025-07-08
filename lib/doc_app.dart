@@ -1,16 +1,13 @@
+import 'package:ecommerce_app/core/routing/app_router.dart';
+import 'package:ecommerce_app/core/routing/routes.dart';
 import 'package:ecommerce_app/core/theming/colors.dart';
-import 'package:ecommerce_app/features/onboarding/data/onboarding_data.dart';
-import 'package:ecommerce_app/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'features/onboarding/presentation/cubit/onboarding_cubit.dart';
-
 class DocApp extends StatelessWidget {
-  //final AppRouter appRouter;
-  //const DocApp({super.key, required this.appRouter});
-  const DocApp({super.key});
+  final AppRouter appRouter;
+  const DocApp({super.key, required this.appRouter});
+  //const DocApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +21,9 @@ class DocApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         debugShowCheckedModeBanner: false,
-        //initialRoute: Routes.onBoarding,
-        //onGenerateRoute: appRouter.generateRoute,
-        home: OnboardingScreen(),
+        onGenerateRoute: appRouter.generateRoute,
+        initialRoute: Routes.onBoarding,
+        //home: OnboardingScreen(),
       ),
     );
   }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/core/theming/styles.dart';
 
-class next extends StatelessWidget {
+class Next extends StatelessWidget {
   //const next({super.key});
   final String caption;
 
-  const next({super.key, required this.caption});
+  const Next({super.key, required this.caption});
 
   @override
   Widget build(BuildContext context) {

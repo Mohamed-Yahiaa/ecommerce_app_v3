@@ -1,10 +1,6 @@
-import 'package:ecommerce_app/features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:ecommerce_app/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ecommerce_app/doc_app.dart';
-import 'package:ecommerce_app/core/routing/app_router.dart';
 
 void main() {
   testWidgets('Should display OnboardingScreen', (WidgetTester tester) async {

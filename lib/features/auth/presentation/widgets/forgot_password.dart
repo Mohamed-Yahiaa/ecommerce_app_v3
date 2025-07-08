@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPass extends StatelessWidget {
@@ -16,10 +17,8 @@ class ForgotPass extends StatelessWidget {
           // هنا تقدر تضيف شاشة نسيت كلمة المرور
         },
         child: Text(cap,
-            style: TextStyle(
-              color: clr,
-              fontSize: size,
-            )),
+            style: TextStyles.font14Gray400W
+                .copyWith(color: clr, fontSize: size)), //
       ),
     );
   }

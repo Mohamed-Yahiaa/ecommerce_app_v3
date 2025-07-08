@@ -1,6 +1,5 @@
 // في ملف features/onboarding/presentation/widgets/next_button.dart
 import 'package:ecommerce_app/core/theming/colors.dart';
-import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:ecommerce_app/features/onboarding/presentation/widget/next.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +20,7 @@ class NextButton extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          isLastPage ? next(caption: 'Get Started') : next(caption: 'Next'),
+          isLastPage ? Next(caption: 'Get Started') : Next(caption: 'Next'),
           if (!isLastPage) ...[
             SizedBox(width: 8.0),
             Icon(Icons.arrow_forward, color: ClrMngr.primary, size: 20.0),

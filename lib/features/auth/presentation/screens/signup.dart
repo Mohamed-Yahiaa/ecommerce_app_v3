@@ -1,50 +1,33 @@
-import 'package:ecommerce_app/core/theming/colors.dart';
 import 'package:ecommerce_app/core/theming/styles.dart';
-import 'package:ecommerce_app/features/auth/presentation/screens/signup.dart';
+import 'package:ecommerce_app/features/auth/presentation/screens/get_started.dart';
 import 'package:ecommerce_app/features/auth/presentation/widgets/bold_caption.dart';
 import 'package:ecommerce_app/features/auth/presentation/widgets/button_rose.dart';
 import 'package:ecommerce_app/features/auth/presentation/widgets/txtbox_name.dart';
 import 'package:ecommerce_app/features/auth/presentation/widgets/txtbox_password.dart';
-import 'package:ecommerce_app/features/auth/presentation/widgets/forgot_password.dart';
 import 'package:ecommerce_app/features/auth/presentation/widgets/txt_and_button.dart';
 import 'package:ecommerce_app/features/auth/presentation/widgets/social_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class Signup extends StatefulWidget {
+  const Signup({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginPageState();
+  State<Signup> createState() => _Signup();
 }
 
-class _LoginPageState extends State<LoginScreen> {
+class _Signup extends State<Signup> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
   final _passwordController = TextEditingController();
-  // bool _obscurePassword = true;
 
-  @override
-  void dispose() {
-    _nameController.dispose();
-    _passwordController.dispose();
-    super.dispose();
-  }
-
-  void _login() {
-    if (_formKey.currentState!.validate()) {
-      // final email = _nameController.text;
-      // final password = _passwordController.text;
-
-      // هنا تقدر تضيف منطق تسجيل الدخول الحقيقي
-      // print('Email: $email');
-      // print('Password: $password');
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("تم تسجيل الدخول بنجاح")),
-      );
-    }
-  }
+  // void _signup() {
+  //   if (_formKey.currentState!.validate()) {
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       const SnackBar(content: Text("تم تسجيل الدخول بنجاح")),
+  //     );
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -64,28 +47,35 @@ class _LoginPageState extends State<LoginScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   SizedBox(height: 63.h),
-                  BoldCaption(caption: 'Welcome\nBack!'),
-                  SizedBox(height: 36.h),
+                  BoldCaption(caption: 'Create an\naccount'),
+                  SizedBox(height: 33.h),
                   TxtBoxName(controller: _nameController),
                   SizedBox(height: 31.h),
-                  TxtboxPassword(controller: _nameController),
-                  SizedBox(height: 9.h),
-                  ForgotPass(
-                      cap: 'Forgot Password?', clr: ClrMngr.rose, size: 14),
-                  SizedBox(height: 52.h),
-                  ButtonRose(cap: 'Login', onPressed: () => _login()),
-                  SizedBox(height: 75.h),
+                  TxtboxPassword(controller: _passwordController),
+                  SizedBox(height: 31.h),
+                  TxtboxPassword(controller: _passwordController),
+                  SizedBox(height: 19.h),
+                  TxtButtonTxt(
+                      alignment: WrapAlignment.start, // 👈 محاذاة لليسار
+                      txt: 'By clicking the ',
+                      caption: 'Register',
+                      txt2: 'button, you agree to the public offer',
+                      onPressed: () => _getStarted),
+                  SizedBox(height: 53.5.h),
+                  ButtonRose(
+                      cap: 'Create Account', onPressed: () => _getStarted),
+                  SizedBox(height: 40.h),
                   Text('- OR Continue with -',
                       style: TextStyles.font12Gray500W),
                   SizedBox(height: 20.h),
                   SocialIcons(), // Google  Apple  Facebook
                   SizedBox(height: 28.h),
                   TxtButtonTxt(
-                      txt: 'Create An Account',
-                      caption: 'Sign Up',
+                      txt: 'I Already Have an Account',
+                      caption: 'Login',
                       txt2: '',
-                      onPressed: () => _navToSignup(context)),
-                  SizedBox(height: 147.h),
+                      onPressed: () => _getStarted(context)),
+                  SizedBox(height: 81.h),
                 ],
               ),
             ),
@@ -95,10 +85,10 @@ class _LoginPageState extends State<LoginScreen> {
     );
   }
 
-  void _navToSignup(BuildContext context) {
+  void _getStarted(BuildContext context) {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => Signup()),
+      MaterialPageRoute(builder: (context) => GetStarted()),
     );
   }
 }

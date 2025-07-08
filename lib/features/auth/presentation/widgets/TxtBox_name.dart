@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/features/auth/presentation/widgets/TxtBox.dart';
+import 'package:ecommerce_app/features/auth/presentation/widgets/txtbox.dart';
 import 'package:flutter/material.dart';
 
 class TxtBoxName extends StatelessWidget {
@@ -6,10 +6,10 @@ class TxtBoxName extends StatelessWidget {
   final void Function(String)? onChanged;
 
   const TxtBoxName({
-    Key? key,
+    super.key,
     required this.controller,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

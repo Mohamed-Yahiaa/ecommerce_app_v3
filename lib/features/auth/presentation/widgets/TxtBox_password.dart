@@ -1,11 +1,11 @@
 import 'package:ecommerce_app/features/auth/presentation/widgets/TxtBox.dart';
 import 'package:flutter/material.dart';
 
-class TxtBoxPassword extends StatefulWidget {
+class TxtboxPassword extends StatefulWidget {
   final TextEditingController controller;
   final void Function(String)? onChanged;
 
-  const TxtBoxPassword({
+  const TxtboxPassword({
     Key? key,
     required this.controller,
     this.onChanged,
@@ -15,7 +15,7 @@ class TxtBoxPassword extends StatefulWidget {
   _TxtBoxPasswordState createState() => _TxtBoxPasswordState();
 }
 
-class _TxtBoxPasswordState extends State<TxtBoxPassword> {
+class _TxtBoxPasswordState extends State<TxtboxPassword> {
   bool _obscureText = true;
 
   @override

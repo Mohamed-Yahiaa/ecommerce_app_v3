@@ -1,6 +1,3 @@
-import 'package:ecommerce_app/core/helpers/extensions.dart';
-import 'package:ecommerce_app/core/routing/routes.dart';
-import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:ecommerce_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:ecommerce_app/features/onboarding/data/onboarding_data.dart';
 import 'package:ecommerce_app/features/onboarding/data/onboarding_model.dart';
@@ -8,7 +5,6 @@ import 'package:ecommerce_app/features/onboarding/data/onboarding_pages.dart';
 import 'package:ecommerce_app/features/onboarding/presentation/widget/next_button.dart';
 import 'package:ecommerce_app/features/onboarding/presentation/widget/indicator_and_skip.dart';
 import 'package:ecommerce_app/features/onboarding/presentation/cubit/onboarding_cubit.dart';
-import 'package:ecommerce_app/features/onboarding/presentation/widget/next.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -76,7 +72,7 @@ class OnboardingScreen extends StatelessWidget {
   }
 
   Widget _buildDotsNextButton(BuildContext context, int currentPage) {
-    final cubit = context.read<OnboardingCubit>();
+    //final cubit = context.read<OnboardingCubit>();
 
     bool isLastPage = currentPage == onboardingPages.length - 1;
 

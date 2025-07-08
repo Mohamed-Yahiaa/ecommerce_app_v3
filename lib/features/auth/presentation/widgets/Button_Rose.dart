@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 
 class ButtonRose extends StatelessWidget {
   final VoidCallback onPressed;
+  final String cap;
   const ButtonRose({
     super.key,
+    required this.cap,
     required this.onPressed,
   });
 
@@ -21,8 +23,8 @@ class ButtonRose extends StatelessWidget {
             borderRadius: BorderRadius.circular(4),
           ),
         ),
-        child: const Text(
-          'Login',
+        child: Text(
+          cap,
           style: TextStyle(
             color: Colors.white, // 👈 لون النص
             fontSize: 16, // اختياري: حجم الخط

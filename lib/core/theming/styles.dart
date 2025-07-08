@@ -11,16 +11,35 @@ class TextStyles {
   static const String bold = 'MontserratBold'; //700
   static const String extraBold = 'MontserratExtrabold'; //800
 
-  static TextStyle font12GrayMedium = TextStyle(
+  static TextStyle font12Gray500W = TextStyle(
     fontSize: 12.sp,
     color: ClrMngr.gray2,
     fontFamily: medium,
     fontWeight: FontWeight.w500,
   );
 
-  static TextStyle font14GraySemibold = TextStyle(
+  static TextStyle font14Gray600W = TextStyle(
     fontSize: 14.sp,
     color: ClrMngr.gray,
+    fontFamily: semiBold,
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle font14Gray400W = TextStyle(
+    fontSize: 14.sp,
+    color: ClrMngr.gray2,
+    fontFamily: primaryFont,
+    fontWeight: FontWeight.w400,
+  );
+  // static TextStyle font14Rose400W = TextStyle(
+  //   fontSize: 14.sp,
+  //   color: ClrMngr.rose,
+  //   fontFamily: primaryFont,
+  //   fontWeight: FontWeight.w400,
+  // );
+  static TextStyle font14Rose600W = TextStyle(
+    fontSize: 14.sp,
+    color: ClrMngr.rose,
     fontFamily: semiBold,
     fontWeight: FontWeight.w600,
   );
@@ -35,19 +54,19 @@ class TextStyles {
 
   static TextStyle font20LightRedSemiBold = TextStyle(
     fontSize: 20.sp,
-    color: Color(0xFFF83758),
+    color: ClrMngr.rose,
     fontFamily: semiBold,
     fontWeight: FontWeight.bold,
   );
 
   //لو الديزاينر بيجيبلى الحاجة bold و SemiBold باستخدم الطريقة دى
-  static TextStyle font24BlackExtraBold = TextStyle(
+  static TextStyle font24Black700Weight = TextStyle(
     fontSize: 24.sp,
     color: Colors.black,
     fontFamily: extraBold,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle font36BlackBold = TextStyle(
+  static TextStyle font36Black700W = TextStyle(
     fontSize: 36.sp,
     color: Colors.black,
     fontFamily: bold,
