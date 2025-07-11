@@ -8,6 +8,7 @@ import 'package:ecommerce_app/features/auth/presentation/widgets/txtbox_password
 import 'package:ecommerce_app/features/auth/presentation/widgets/forgot_password.dart';
 import 'package:ecommerce_app/features/auth/presentation/widgets/txt_and_button.dart';
 import 'package:ecommerce_app/features/auth/presentation/widgets/social_icons.dart';
+import 'package:ecommerce_app/features/home/presentation/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,21 +30,6 @@ class _LoginPageState extends State<LoginScreen> {
     _nameController.dispose();
     _passwordController.dispose();
     super.dispose();
-  }
-
-  void _login() {
-    if (_formKey.currentState!.validate()) {
-      // final email = _nameController.text;
-      // final password = _passwordController.text;
-
-      // هنا تقدر تضيف منطق تسجيل الدخول الحقيقي
-      // print('Email: $email');
-      // print('Password: $password');
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("تم تسجيل الدخول بنجاح")),
-      );
-    }
   }
 
   @override
@@ -99,6 +85,29 @@ class _LoginPageState extends State<LoginScreen> {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => Signup()),
+    );
+  }
+
+  void _login() {
+    if (!_formKey.currentState!.validate()) {
+      // final email = _nameController.text;
+      // final password = _passwordController.text;
+
+      // هنا تقدر تضيف منطق تسجيل الدخول الحقيقي
+      // print('Email: $email');
+      // print('Password: $password');
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("تم تسجيل الدخول بنجاح")),
+      );
+      _navToHome(context);
+    }
+  }
+
+  void _navToHome(BuildContext context) {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => HomePage()),
     );
   }
 }

@@ -21,14 +21,6 @@ class _Signup extends State<Signup> {
   final _nameController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  // void _signup() {
-  //   if (_formKey.currentState!.validate()) {
-  //     ScaffoldMessenger.of(context).showSnackBar(
-  //       const SnackBar(content: Text("تم تسجيل الدخول بنجاح")),
-  //     );
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;

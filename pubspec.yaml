@@ -19,6 +19,7 @@ dependencies:
   flutter_bloc: ^9.0.0
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
+  cached_network_image: ^3.2.3  #(لتحميل الصور بكفاءة)
 
 dev_dependencies:
   flutter_test:
@@ -34,6 +35,10 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   fonts:
+    - family: MontserratLight
+      fonts:
+        - asset: assets/fonts/MontserratLight.ttf
+          weight: 300
     - family: MontserratRegular
       fonts:
         - asset: assets/fonts/MontserratRegular.ttf
@@ -57,6 +62,9 @@ flutter:
     - family: CM Sans Serif
       fonts:
        - asset: assets/fontz/cm_sans_serif_2012.ttf
+    - family: ArimoBold
+      fonts:
+       - asset: assets/fonts/Arimo-Bold.ttf
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
@@ -65,3 +73,10 @@ flutter:
     - assets/images/
     - assets/images/onboarding/
     - assets/images/social/
+    - assets/images/home/
+    - assets/images/maincat/
+    - assets/images/cards/ 
+    - assets/images/home_prod1/
+
+    
+
